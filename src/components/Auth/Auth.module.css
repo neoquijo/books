@@ -1,0 +1,47 @@
+.wrapper{
+    position: fixed;
+    top:60px;
+    width:100vw;
+    height:calc(100vh - 60px);
+    background-color: rgba(0, 0, 0, 0.596);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    
+}
+
+.formBody{
+    width:75vw;
+    height:65vh;
+    background-color: white;
+    border-radius: 20px;
+    display:grid;
+    grid-template-columns: 3fr 1.1fr;
+}
+
+.register{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: url('http://localhost:3000/chat.webp');
+    
+}
+
+.welcome{
+
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;    
+    
+    /* justify-content: center; */
+    /* text-align: center; */
+    align-items: center;
+}
+
+

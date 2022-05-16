@@ -1,3 +1,10 @@
 .wrapper{
-    
+    opacity: 0;
+    animation: appear 1s forwards
+}
+
+@keyframes appear {
+    to{
+        opacity: 1;
+    }
 }

@@ -10,28 +10,28 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { SearchResult } from './SearchResult'
 import { AFetchBooksByName, ASetQuery} from '../../store/actions/searchActions'
-import { AHideSearchResultBody, AShowSearchResultBody } from '../../store/actions/navActions'
+import { AHideSearchResultBody, AShowLoginModal, AShowSearchResultBody } from '../../store/actions/navActions'
+import { useNavigate } from 'react-router-dom'
+
 
 
 export const Navbar = () => {
     const dispatch = useDispatch()
     const searchBodyRef = useRef()
-    const searchQuery = useSelector(state=>state.search.query)
+    const navigate = useNavigate()
     const showResults = useSelector(state=>state.nav.showSearchResultBody)
 
     useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
+
         function handleClickOutside(event) {
           if (searchBodyRef.current && !searchBodyRef.current.contains(event.target)) {
             dispatch(AHideSearchResultBody())
           }
         }
-        // Bind the event listener
+   
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
-          // Unbind the event listener on clean up
+  
           document.removeEventListener("mousedown", handleClickOutside);
         };
       }, [searchBodyRef]);
@@ -49,7 +49,7 @@ export const Navbar = () => {
 
         <div className={css.wrapper}>
         
-            <div className={css.logo}>
+            <div onClick={()=>navigate('/')} className={css.logo}>
                 <img width={50} height='50' alt='Логотип' src='/logo192.png'/>
             </div>
             <div className={css.search}>
@@ -72,11 +72,12 @@ export const Navbar = () => {
                 </motion.div>}
             </div>
             <div className={css.controls}>
-                <HomeIcon/>
+                <HomeIcon onClick={()=>navigate('/')}/>
                 <SearchIcon/>
                 <PlusIcon/>
                 <HeartIcon/>
-                <ProfileIcon/>
+                
+                <ProfileIcon onClick={()=>dispatch(AShowLoginModal())}/>
                 <BookIcon/>
             </div>
         </div>

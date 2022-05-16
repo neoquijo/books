@@ -1,10 +1,14 @@
 .wrapper{
+    user-select: none;
     padding: 0px 260px;
     align-items: center;
     display: flex;
     justify-content: space-between;
-   
-    height: 50px;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0px 0px 3px #888888cb;
+    z-index: 1;
+    height: 60px;
     background-color: white
 }
 
@@ -12,11 +16,12 @@
     
     height: 2rem;
     padding-left: 10px;
-    width: 400px;
+    width: 350px;
     outline: none;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
     background-color: #EFEFEF;
+    
 }
 
 .controls{
@@ -71,4 +76,8 @@
   /* Handle on hover */
   .searchResultBody::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
+  }
+
+  .logo{
+    cursor: pointer;
   }

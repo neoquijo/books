@@ -1,9 +1,11 @@
-import { hideSearchResultBody, setDisplayBook, showSearchResultBody } from "../actions/types"
+import { hideSearchResultBody, loginModalShow, setDisplayBook, showSearchResultBody, startRegistration } from "../actions/types"
 
 const initialState={
     displayBook: null,
     lastSearch:null,
-    showSearchResultBody: false
+    showSearchResultBody: false,
+    loginModal: false,
+    startRegistration : false
 }
 
 export const navReducer = (state=initialState, action) => {
@@ -14,6 +16,10 @@ export const navReducer = (state=initialState, action) => {
             return {...state, showSearchResultBody: false}
         case showSearchResultBody:
             return {...state, showSearchResultBody: true}
+        case loginModalShow:
+            return {...state, loginModal: !state.loginModal}
+        case startRegistration:
+            return {...state, startRegistration: !state.startRegistration}
     default: return state
     }
 }

@@ -1,3 +1,41 @@
 .wrapper{
+    padding: 10px;
     display:flex;
+    flex-direction: column;
+    margin: 20px 250px 0px 250px;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.top{
+    
+    display: flex;
+    gap: 50px;
+
+}
+
+.bookTitle{
+    font-size: 2rem;
+    text-align: start;
+    font-family: 'Lobster';
+    word-wrap: break-word;
+
+}
+
+.bookDescription{
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: start;
+    text-indent: 20px;
+    font-family: 'Oxygen';
+    cursor: auto
+}
+
+.bookAuthors{
+    width: 100%;
+    text-align: center;
+    font-family: 'Akshar',
+    
 }
